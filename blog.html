@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강남 셔츠룸 카페 블로그 - 마포 브루탈리즘 힙플레이스</title>
+    <meta name="description" content="마포에서 가장 쎈 힙플레이스 카페, 강남 셔츠룸 컨셉의 파격적인 공간. 원색의 거친 브루탈리즘 디자인, 자유로운 분위기, 형님들 인증 완료. 예약은 010-6279-0862">
+    <meta name="keywords" content="강남 셔츠룸, 마포 카페, 힙플레이스, 브루탈리즘 카페, 홍대 핫플, 서울 이색카페, bro 감성">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sf-t3-1779642675702-288.pages.dev">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <!-- Open Graph -->
+    <meta property="og:title" content="강남 셔츠룸 힙플레이스 카페 - 마포 브루탈리즘">
+    <meta property="og:description" content="진짜들은 여기 모인다. 원색의 거침, 자유로운 공간. 예약은 010-6279-0862">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80">
+    <meta property="og:url" content="https://sf-t3-1779642675702-288.pages.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="강남 셔츠룸 힙플레이스 카페 - 마포 브루탈리즘">
+    <meta property="twitter:domain" content="sf-t3-1779642675702-288.pages.dev">
+    <meta property="twitter:url" content="https://sf-t3-1779642675702-288.pages.dev">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            line-height: 1.4;
+        }
+        a {
+            color: #ff007f;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        a:hover {
+            border-bottom-color: #ff007f;
+            color: #00ffcc;
+        }
+        img, svg {
+            max-width: 100%;
+            display: block;
+        }
+        ul {
+            list-style: none;
+        }
+        h1, h2, h3, h4 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-family: 'Courier New', monospace;
+            font-size: 1.05rem;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .hero-title {
+            font-size: clamp(3rem, 12vw, 7rem);
+            color: #ff007f;
+            text-shadow: 6px 6px 0 #00ffcc, 12px 12px 0 #0a0a0a;
+            line-height: 0.9;
+            letter-spacing: -2px;
+        }
+        .section-title {
+            font-size: 2.8rem;
+            color: #ff007f;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border-left: 10px solid #00ffcc;
+            padding-left: 1rem;
+        }
+        .section-title::before {
+            content: "// ";
+            color: #00ffcc;
+            font-size: 1.2rem;
+        }
+        .ugc-card p {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* header */
+        header {
+            background: #0a0a0a;
+            border-bottom: 4px solid #ff007f;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo a {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #00ffcc;
+            border: none;
+            background: #ff007f;
+            padding: 0.2rem 1rem;
+            transform: skewX(-10deg);
+        }
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+        nav a {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f0f0f0;
+            border: none;
+            padding: 0.5rem 0.2rem;
+            border-bottom: 3px solid transparent;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            border-bottom-color: #ff007f;
+            color: #ff007f;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 4px;
+            background: #f0f0f0;
+            border-radius: 2px;
+        }
+
+        /* hero */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: radial-gradient(circle at 20% 30%, #1a1a2e, #0a0a0a);
+            border-bottom: 4px solid #00ffcc;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-text {
+            background: rgba(0,0,0,0.7);
+            padding: 2rem;
+            border-left: 8px solid #ff007f;
+        }
+        .hero-text p {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-top: 1rem;
+        }
+        .hero-img {
+            border: 4px solid #00ffcc;
+            transform: rotate(2deg);
+            overflow: hidden;
+        }
+
+        /* sections */
+        section {
+            padding: 4rem 0;
+        }
+        .blog-post {
+            background: #111;
+            border: 3px solid #333;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .blog-post::before {
+            content: "HOT";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #ff007f;
+            color: #0a0a0a;
+            padding: 0.3rem 1.2rem;
+            font-weight: 900;
+            font-size: 1rem;
+            transform: skewX(-15deg);
+        }
+        .blog-post h2 {
+            font-size: 2.4rem;
+            color: #00ffcc;
+            margin-bottom: 1.5rem;
+        }
+        .blog-post p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .blog-post blockquote {
+            border-left: 6px solid #ff007f;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #aaa;
+            font-size: 1.2rem;
+        }
+        .blog-post .highlight {
+            background: #ff007f20;
+            padding: 1rem;
+            border: 2px dashed #ff007f;
+            margin: 1.5rem 0;
+        }
+
+        /* UGC cards */
+        .ugc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .ugc-card {
+            background: #1a1a1a;
+            border: 3px solid #00ffcc;
+            padding: 1.5rem;
+            transition: 0.2s;
+        }
+        .ugc-card:hover {
+            border-color: #ff007f;
+            transform: scale(1.01);
+        }
+        .ugc-card h3 {
+            color: #ff007f;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 2px solid #333;
+            padding: 1.2rem 0;
+        }
+        .faq-question {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ffcc;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+        .faq-question::after {
+            content: "+";
+            color: #ff007f;
+            font-size: 1.8rem;
+        }
+        .faq-answer {
+            margin-top: 0.8rem;
+            display: block;
+            color: #ccc;
+        }
+
+        /* footer */
+        footer {
+            background: #0a0a0a;
+            border-top: 4px solid #ff007f;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #111;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 200px;
+                padding: 1rem;
+                border: 3px solid #ff007f;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo"><a href="/">SHIRT ROOM</a></div>
+        <nav>
+            <ul>
+                <li><a href="/">홈</a></li>
+                <li><a href="/about">어바웃</a></li>
+                <li><a href="/blog">블로그</a></li>
+                <li><a href="/gallery">갤러리</a></li>
+                <li><a href="/contact">컨택</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero fade-in">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1 class="hero-title">BRO BLOG</h1>
+                <p>마포에서 가장 쎈 힙플레이스. 강남 셔츠룸 컨셉의 파격. 원색 브루탈리즘, 자유로운 분위기. 형님들 인증 완료.</p>
+                <p style="margin-top:1.5rem;background:#ff007f;color:#0a0a0a;display:inline-block;padding:0.5rem 2rem;transform:skewX(-10deg);font-weight:900;">예약: 010-6279-0862</p>
+            </div>
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="브루탈리즘 카페 인테리어">
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG POST: 정보성 글 1편 -->
+    <section class="container fade-in">
+        <h2 class="section-title">셔츠룸 카페의 모든 것</h2>
+        <article class="blog-post">
+            <h2>왜 강남 셔츠룸 컨셉이 마포에서 핫할까?</h2>
+            <p><strong>서울 힙플레이스 지도</strong>에 새로운 핀이 찍혔다. 마포구, 홍대입구역 3번 출구에서 도보 5분. <strong>“강남 셔츠룸”</strong>이라는 이름만 들으면 다들 고개를 갸우뚱한다. 하지만 막상 문을 열고 들어가면 모든 게 이해된다.</p>
+            
+            <blockquote>“여기는 가짜 감성 팔지 않는다. 진짜 거친 브루탈리즘, 원색의 폭력, 그리고 자유로움.”</blockquote>
+
+            <p>이곳은 <strong>기존 카페의 틀을 완전히 부순다</strong>. 마치 강남의 비즈니스 셔츠룸을 연상시키는 미니멀하고 날카로운 인테리어. 하지만 그 안에는 부드러운 조명과 강렬한 원색(핑크, 시안, 옐로우)이 충돌한다. 벽은 거친 콘크리트, 바닥은 스테인리스, 테이블은 철제 파이프. 모든 게 <strong>‘있어 보이지만 편안함은 없다’</strong>는 듯 도발한다.</p>
+
+            <div class="highlight">
+                <p>⚠️ <strong>주의:</strong> 여기는 인스타 감성 사진 찍으러 오는 곳이 아니다. 진짜 힙함을 즐기고, 자유롭게 떠들고, 형들과 소주 한잔 하고 싶은 bro들을 위한 공간이다.</p>
+            </div>
+
+            <h3>왜 이곳이 핫플이 되었나?</h3>
+            <p><strong>1. 컨셉의 파격성</strong><br>
+            ‘강남 셔츠룸’이라는 이름 자체가 이미 논란이다. 비즈니스맨들의 이미지와 마포의 힙스터 문화가 충돌하며 생긴 독특한 아우라. 일반 카페에서는 절대 맛볼 수 없는 분위기.</p>
+
+            <p><strong>2. 브루탈리즘 디자인</strong><br>
+            노출 콘크리트, 거친 철재, 원색 포인트. 모든 게 의도적으로 투박하다. 하지만 그 안에 숨겨진 디테일(네온사인, 레트로 가구)이 감각적이다.</p>
+
+            <p><strong>3. 자유로운 문화</strong><br>
+            여기서는 노트북 펼치고 작업하는 사람보다 술잔 부딪히는 소리가 더 크다. 음악은 힙합과 일렉트로닉이 믹스. 직원들도 편하게 ‘형’이라고 부른다. <strong>모든 게 ‘bro’ 문화</strong>.</p>
+
+            <p><strong>4. 형님들의 인증</strong><br>
+            실제로 강남에서 온 사장님, 디자이너, 예술가들이 모여든다. SNS에는 #강남셔츠룸 #마포힙플 #bro감성 같은 해시태그가 넘쳐난다. 이미 인증 완료.</p>
+
+            <h3>메뉴 추천</h3>
+            <p>시그니처 음료는 <strong>‘핑크 셔츠 에이드’</strong> (자몽, 히비스커
+</body>
+</html>
