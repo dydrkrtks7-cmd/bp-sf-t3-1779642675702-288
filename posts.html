@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · sf-t3-1779642675702-288</title>
+  <meta name="description" content="sf-t3-1779642675702-288에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-288.maphoshirts.today/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* ===== RESET & BASE ===== */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ }
+ body {
+ font-family: 'Arial Black', 'Impact', sans-serif;
+ background: #0a0a0a;
+ color: #f0f0f0;
+ line-height: 1.4;
+ }
+ a {
+ color: #ff007f;
+ text-decoration: none;
+ border-bottom: 2px solid transparent;
+ transition: 0.2s;
+ }
+ a:hover {
+ border-bottom-color: #ff007f;
+ color: #00ffcc;
+ }
+ img, svg {
+ max-width: 100%;
+ display: block;
+ }
+ ul {
+ list-style: none;
+ }
+ h1, h2, h3, h4 {
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ }
+ p {
+ font-family: 'Courier New', monospace;
+ font-size: 1.05rem;
+ }
+
+ /* ===== TYPOGRAPHY ===== */
+ .hero-title {
+ font-size: clamp(3rem, 12vw, 7rem);
+ color: #ff007f;
+ text-shadow: 6px 6px 0 #00ffcc, 12px 12px 0 #0a0a0a;
+ line-height: 0.9;
+ letter-spacing: -2px;
+ }
+ .section-title {
+ font-size: 2.8rem;
+ color: #ff007f;
+ position: relative;
+ display: inline-block;
+ margin-bottom: 1.5rem;
+ border-left: 10px solid #00ffcc;
+ padding-left: 1rem;
+ }
+ .section-title::before {
+ content: "// ";
+ color: #00ffcc;
+ font-size: 1.2rem;
+ }
+ .ugc-card p {
+ font-family: 'Arial Black', sans-serif;
+ font-size: 1.1rem;
+ line-height: 1.3;
+ }
+ .fade-in {
+ opacity: 0;
+ animation: fadeUp 0.8s ease-out forwards;
+ }
+ @keyframes fadeUp {
+ to { opacity: 1; transform: translateY(0); }
+ }
+
+ /* ===== LAYOUT ===== */
+ .container {
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ }
+
+ /* header */
+ header {
+ background: #0a0a0a;
+ border-bottom: 4px solid #ff007f;
+ padding: 1rem 0;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .logo a {
+ font-size: 2rem;
+ font-weight: 900;
+ color: #00ffcc;
+ border: none;
+ background: #ff007f;
+ padding: 0.2rem 1rem;
+ transform: skewX(-10deg);
+ }
+ nav ul {
+ display: flex;
+ gap: 2rem;
+ }
+ nav a {
+ font-size: 1.2rem;
+ font-weight: bold;
+ color: #f0f0f0;
+ border: none;
+ padding: 0.5rem 0.2rem;
+ border-bottom: 3px solid transparent;
+ transition: 0.2s;
+ }
+ nav a:hover {
+ border-bottom-color: #ff007f;
+ color: #ff007f;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 5px;
+ }
+ .hamburger span {
+ width: 30px;
+ height: 4px;
+ background: #f0f0f0;
+ border-radius: 2px;
+ }
+
+ /* hero */
+ .hero {
+ padding: 6rem 0 4rem;
+ background: radial-gradient(circle at 20% 30%, #1a1a2e, #0a0a0a);
+ border-bottom: 4px solid #00ffcc;
+ }
+ .hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 3rem;
+ align-items: center;
+ }
+ .hero-text {
+ background: rgba(0,0,0,0.7);
+ padding: 2rem;
+ border-left: 8px solid #ff007f;
+ }
+ .hero-text p {
+ font-size: 1.3rem;
+ color: #ccc;
+ margin-top: 1rem;
+ }
+ .hero-img {
+ border: 4px solid #00ffcc;
+ transform: rotate(2deg);
+ overflow: hidden;
+ }
+
+ /* sections */
+ section {
+ padding: 4rem 0;
+ }
+ .blog-post {
+ background: #111;
+ border: 3px solid #333;
+ padding: 2.5rem;
+ margin-bottom: 3rem;
+ position: relative;
+ }
+ .blog-post::before {
+ content: "HOT";
+ position: absolute;
+ top: -12px;
+ left: 20px;
+ background: #ff007f;
+ color: #0a0a0a;
+ padding: 0.3rem 1.2rem;
+ font-weight: 900;
+ font-size: 1rem;
+ transform: skewX(-15deg);
+ }
+ .blog-post h2 {
+ font-size: 2.4rem;
+ color: #00ffcc;
+ margin-bottom: 1.5rem;
+ }
+ .blog-post p {
+ margin-bottom: 1.2rem;
+ font-size: 1.1rem;
+ line-height: 1.6;
+ }
+ .blog-post blockquote {
+ border-left: 6px solid #ff007f;
+ padding-left: 1.5rem;
+ margin: 1.5rem 0;
+ font-style: italic;
+ color: #aaa;
+ font-size: 1.2rem;
+ }
+ .blog-post .highlight {
+ background: #ff007f20;
+ padding: 1rem;
+ border: 2px dashed #ff007f;
+ margin: 1.5rem 0;
+ }
+
+ /* UGC cards */
+ .ugc-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 1.5rem;
+ margin: 2rem 0;
+ }
+ .ugc-card {
+ background: #1a1a1a;
+ border: 3px solid #00ffcc;
+ padding: 1.5rem;
+ transition: 0.2s;
+ }
+ .ugc-card:hover {
+ border-color: #ff007f;
+ transform: scale(1.01);
+ }
+ .ugc-card h3 {
+ color: #ff007f;
+ margin-bottom: 0.5rem;
+ font-size: 1.3rem;
+ }
+
+ /* FAQ */
+ .faq-item {
+ border-bottom: 2px solid #333;
+ padding: 1.2rem 0;
+ }
+ .faq-question {
+ font-size: 1.3rem;
+ font-weight: bold;
+ color: #00ffcc;
+ cursor: pointer;
+ display: flex;
+ justify-content: space-between;
+ }
+ .faq-question::after {
+ content: "+";
+ color: #ff007f;
+ font-size: 1.8rem;
+ }
+ .faq-answer {
+ margin-top: 0.8rem;
+ display: block;
+ color: #ccc;
+ }
+
+ /* footer */
+ footer {
+ background: #0a0a0a;
+ border-top: 4px solid #ff007f;
+ padding: 2rem 0;
+ text-align: center;
+ font-size: 1.1rem;
+ }
+
+ /* responsive */
+ @media (max-width: 768px) {
+ .hero-grid {
+ grid-template-columns: 1fr;
+ }
+ nav ul {
+ display: none;
+ flex-direction: column;
+ background: #111;
+ position: absolute;
+ top: 70px;
+ right: 0;
+ width: 200px;
+ padding: 1rem;
+ border: 3px solid #ff007f;
+ }
+ nav ul.active {
+ display: flex;
+ }
+ .hamburger {
+ display: flex;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · sf-t3-1779642675702-288">
+  <meta property="og:description" content="sf-t3-1779642675702-288에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-288.maphoshirts.today/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container header-inner">
+ <div class="logo"><a href="/">SHIRT ROOM</a></div>
+ <nav>
+ <ul>
+ <li><a href="/">홈</a></li>
+ <li><a href="/about">어바웃</a></li>
+ <li><a href="/blog">블로그</a></li>
+ <li><a href="/gallery">갤러리</a></li>
+ <li><a href="/contact">컨택</a></li>
+ </ul>
+ <div class="hamburger" onclick="toggleMenu()">
+ 
+ </div>
+ </nav>
+ </div>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1543.html">강남 셔츠룸 흐름과 셔츠룸 예약 연결 메모</a>
+        <p class="post-item__summary">강남 셔츠룸 정보가 많아질수록 중요한 것은 더 많은 페이지가 아니라 더 정확한 비교 순서입니다. 마포 기준으로 보면 같은 말처럼 보여도 실제로는 다른 의도를 가진 안내가 섞여 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0349.html">마포의 활기찬 거리 문화와 지역 특색 살펴보기</a>
+        <p class="post-item__summary">마포는 서울에서 가장 역동적인 지역 중 하나로, 홍대의 예술 문화부터 합정의 카페 거리까지 다양한 매력을 품고 있습니다. 한강공원을 따라 펼쳐진 산책로와 개성 넘치는 상점들이 어우러져 방문객들의 발</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0350.html">마포 지역의 현대적인 라운지 문화와 소셜 스페이스 탐방</a>
+        <p class="post-item__summary">마포는 서울에서 가장 역동적인 변화를 겪고 있는 지역 중 하나입니다. 한강변의 자연환경과 홍대, 합정의 예술문화가 어우러져 있으며, 최근 몇 년간 새로운 형태의 커뮤니티 공간들이 속속 생겨나고 있습</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0351.html">강남 셔츠룸에서 힙플레이스 카페를 찾다</a>
+        <p class="post-item__summary">강남 셔츠룸은 마포의 중심가에 위치한 힙플레이스 카페입니다. 풍경은 빈티지와 현대가 조화롭게 어우러지며, 분위기는 편안하면서도 세련됩니다. 인테리어는 아트워크와 가벼운 조명이 독특한 매력을 선사합니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0352.html">마포의 문화와 비즈니스를 즐기는 현지인 가이드</a>
+        <p class="post-item__summary">마포 지역은 서울의 주요 비즈니스 거점 중 하나로, 한강변의 자연환경과 도시의 활기가 어우러진 곳입니다. 홍대입구, 합정, 상수 등 다양한 상권이 발달해 있으며, 각 지역마다 독특한 특성을 가지고 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0353.html">마포 힙플레이스 카페에 필요한 것, 강남 셔츠룸이 이미 보여줬다</a>
+        <p class="post-item__summary">최근 마포 지역에서 힙플레이스 카페가 빠르게 늘어나고 있다. 강남 셔츠룸이 독특한 인테리어와 세심한 서비스로 입소문을 탄 것처럼, 마포의 카페들도 저마다 차별화된 콘셉트로 고객의 발길을 붙잡고 있다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0354.html">강남 셔츠룸에서 느끼는 마포 힙카페 문화</a>
+        <p class="post-item__summary">강남 셔츠룸은 마포의 비밀스런 힙플레이스 카페이다. 전통 한옥의 서늘한 벽돌과 현대적인 목재 가구가 조화를 이루며, 여유로운 아침부터 여운을 남기는 오후까지 편안함을 선사한다. 수제 커피와 향긋한 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0355.html">강남 셔츠룸에서 힙플레이스 카페까지 마포 MZ 핫플 트렌드</a>
+        <p class="post-item__summary">서울 마포구는 최근 힙플레이스 카페의 성지로 떠오르며 유동 인구와 소비 패턴이 크게 변화하고 있다. 홍대입구부터 합정까지 이어지는 카페 거리는 감각적인 인테리어와 차별화된 콘셉트로 MZ 세대의 발길</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0356.html">강남 셔츠룸, 마포 힙플레이스 카페의 새로운 패션 공간</a>
+        <p class="post-item__summary">가장 트렌디한 소형 디자인이 가득한 강남 셔츠룸은 마포 지역에서 힙스러운 분위기와 편안한 좌석을 제공해, 방문객에게 아늑한 시간을 선사합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0357.html">마포 지역 기업들이 주목하는 SEO 최적화 전략</a>
+        <p class="post-item__summary">마포는 서울에서 가장 역동적인 비즈니스 지구 중 하나로, 다양한 규모의 기업들이 치열한 온라인 경쟁 속에서 성장하고 있습니다. 지역 기업들이 성공하려면 단순히 좋은 서비스만으로는 부족하며, 고객들이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0358.html">마포 카페에서 바라본 강남 셔츠룸 문화의 확장</a>
+        <p class="post-item__summary">마포에 자리한 힙플레이스 카페를 운영하다 보면 서울 각지에서 다양한 손님들이 방문한다. 홍대와 합정을 중심으로 형성된 카페 문화는 점점 더 많은 사람들이 찾는 명소로 자리 잡고 있다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0359.html">마포와 홍대에서 즐기는 카라오케 문화의 변화</a>
+        <p class="post-item__summary">서울의 서쪽 지역인 마포구는 오랫동안 서울의 주요 엔터테인먼트 허브로 자리 잡아왔습니다. 특히 홍대와 합정 지역은 젊은 세대부터 중년층까지 다양한 연령대가 찾는 문화의 중심지입니다. 이 지역의 가라</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0360.html">마포에서 즐기는 로컬 식문화와 회식 문화의 중심지</a>
+        <p class="post-item__summary">마포는 서울의 주요 상업 지구로서 다양한 음식점과 엔터테인먼트 시설이 밀집해 있습니다. 한강변의 경치와 함께 발전한 이 지역은 직장인들과 관광객들이 선호하는 장소로 자리 잡았습니다. 특히 저녁 시간</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0361.html">강남 셔츠룸, 마포 힙플레이스의 숨은 보석</a>
+        <p class="post-item__summary">강남 셔츠룸은 마포의 한복잡한 거리에서 빛나는 힙플레이스 카페다. 독특한 인테리어와 예술작품이 어우러져 방문객을 사로잡는다. 도시의 소음과는 다른 차분한 분위기에서 편안한 시간을 보낼 수 있다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0362.html">마포 힙플레이스 카페, 강남 셔츠룸 감성을 담다</a>
+        <p class="post-item__summary">마포 일대에서 강남 셔츠룸의 감성을 살린 힙플레이스 카페가 입소문을 타고 있다. 일반 카페와 달리 공간 연출에 공을 들인 점이 돋보인다. 세련된 인테리어와 감각적인 조명이 만들어내는 무드는 방문객들</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0363.html">강남 셔츠룸이 온다: 마포 힙플레이스 카페의 신선한 매력</a>
+        <p class="post-item__summary">강남 셔츠룸은 마포 힙플레이스 카페의 상징이자, 독특한 디자인과 편안함이 공존하는 공간이다. 소박한 내부는 빈티지 소품으로 가득하며, 신선한 커피와 작은 정원 같은 조명이 어우러진 분위기를 연출한다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0062.html">강남 셔츠룸 트래픽 전략과 구글 틈새 키워드 트래픽 외환 거래 전략의 비교</a>
+        <p class="post-item__summary">디지털 마케팅의 세계에서 특정 키워드를 선점하는 것은 막대한 수익을 창출하는 중요한 비즈니스 모델이 됩니다. 특히 강남 셔츠룸과 같이 고관여 업종의 트래픽을 유도하는 전략과 금융 데이터를 기반으로 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0063.html">강남 셔츠룸 마케팅의 실패 원인과 여기에서 확인의 역할</a>
+        <p class="post-item__summary">강남 셔츠룸을 홍보하기 위해 공격적인 마케팅을 진행하다 보면 예기치 않게 검색 엔진으로부터 제재를 받는 경우가 발생합니다. 많은 마케터가 단순히 더 많은 링크를 배포하는 것에만 급급하다가 알고리즘의</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0064.html">강남 셔츠룸 고객을 위한 마포 코인노래방 방음 시설 비교 가이드 활용법</a>
+        <p class="post-item__summary">일상의 스트레스를 해소하기 위해 강남 셔츠룸과 같은 공간을 찾는 분들이라면, 때로는 혼자만의 시간 속에서 에너지를 재충전하고 싶을 때도 있습니다. 마포 지역의 코인노래방은 이러한 니즈를 완벽하게 충</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0065.html">강남 셔츠룸 검색 품질 향상을 위한 구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">웹사이트 운영 초기, 데이터가 검색 엔진에 노출되지 않아 답답함을 느낀 경험이 있을 것입니다. 특정 키워드인 강남 셔츠룸 관련 콘텐츠를 작성해도 크롤링 우선순위에서 밀리면 트래픽 확보는 요원해집니다</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
